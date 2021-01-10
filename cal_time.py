@@ -18,7 +18,7 @@ class cal_time(object):
         @wraps(func)
         def wrapped_function(*args, **kwargs):
             print('starting  cal_time')
-            func(*args, **kwargs)
+            refunc=func(*args, **kwargs)
             print('eclapsed time :',  time.process_time())
-            return
+            return refunc
         return wrapped_function
