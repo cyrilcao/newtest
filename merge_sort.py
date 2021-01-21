@@ -15,8 +15,8 @@ sys.setrecursionlimit(10000)
 
 
 ###对两个有序队列归并成一个有序队列
-def listmerge(li,low,high):
-    mid=(low+high)//2  #取中间数
+def listmerge(li,low,mid,high):
+    #mid为第一个有序数的最后一个
     i=low
     j=mid+1
     litmp=[]
@@ -44,7 +44,8 @@ def merge_sort(li,low,high):
         mid=(low+high)//2  #找中间值
         merge_sort(li,low,mid)  #对前面一半队列排序
         merge_sort(li,mid+1,high) #对后面一半队列排序
-        listmerge(li,low,high)   #两个有序队列归并成一个有序队列
+        listmerge(li,low,mid,high)   #两个有序队列归并成一个有序队列
+
 
 
 if __name__ == '__main__':
@@ -53,3 +54,4 @@ if __name__ == '__main__':
     print(li)
     #print(1//2)
     pass
+
